@@ -23,10 +23,10 @@ self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(cacheName).then(cache => {
       return cache.addAll([
-        `/vr-sample/`,
-        `/vr-sample/index.html`,
-        `/vr-sample/aframe-master.min.js"`,
-        `/vr-sample/test2.mp4`
+        `/`,
+        `/index.html`,
+        `/aframe-master.min.js"`,
+        `/test2.mp4`
       ])
           .then(() => self.skipWaiting());
     })
