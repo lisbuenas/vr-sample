@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
 
   <title>Sample VR</title>
-
+  <link rel='manifest' href='manifest.json'>
   <script>
   window.console = window.console || function(t) {};
 </script>
@@ -37,15 +37,15 @@ window.addEventListener('click', function () {
 </script>
 <script>
 if('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('service-worker.js', { scope: '/vr-sample/' })
-          .then(function(registration) {
-                console.log('Service Worker Registered');
-          });
+    navigator.serviceWorker.register('service-worker.js', { scope: '/vr-sample/' })
+      .then(function(registration) {
+            console.log('Service Worker Registered');
+      });
 
-        navigator.serviceWorker.ready.then(function(registration) {
-           console.log('Service Worker Ready');
-        });
-      }
+    navigator.serviceWorker.ready.then(function(registration) {
+        console.log('Service Worker Ready');
+    });
+  }
   </script>
 </body>
 </html>
