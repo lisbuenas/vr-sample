@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>CodePen - On-Click A-Frame 360 Video (latest master)</title>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+</head>
+
+<body translate="no" >
+  <script src="https://rawgit.com/aframevr/aframe/master/dist/aframe-master.min.js"></script>
+<a-assets>
+  <video id='vid' src="test.mp4">
+</a-assets>
+<a-scene>
+  <a-sky rotation="0 -90 0" src="#vid"></a-sky>
+ </a-scene>
+
+<script>
+window.addEventListener('click', function () {
+  var v = document.querySelector('#vid');
+  v.play();
+});
+</script>
+</body>
+</html>
