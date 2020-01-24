@@ -15,8 +15,14 @@ import {
   IonTitle,
   IonToolbar
 } from '@ionic/react';
+
 import { book, build, colorFill, grid } from 'ionicons/icons';
+import 'aframe';
+// import 'aframe-particle-system-component';
+import {Entity, Scene} from 'aframe-react';
 import React from 'react';
+
+
 import './Tab1.css';
 
 const Tab1: React.FC = () => {
@@ -41,6 +47,16 @@ const Tab1: React.FC = () => {
             </p>
           </IonCardContent>
         </IonCard>
+
+        <Scene>
+        <Entity geometry={{primitive: 'box'}} material={{color: 'red'}} position={{x: 0, y: 0, z: -5}}/>
+        <Entity particle-system={{preset: 'snow'}}/>
+        <Entity light={{type: 'point'}}/>
+        <Entity gltf-model={{src: 'virtualcity.gltf'}}/>
+        <Entity text={{value: 'Hello, WebVR!'}}/>
+      </Scene>
+
+
 
         <IonList lines="none">
           <IonListHeader>
