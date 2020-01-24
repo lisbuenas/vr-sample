@@ -21,7 +21,7 @@
 </head>
 
 <body translate="no" >
-  <script src="https://rawgit.com/aframevr/aframe/master/dist/aframe-master.min.js"></script>
+  <script src="aframe-master.min.js"></script>
 <a-assets>
   <video id='vid' src="test2.mp4">
 </a-assets>
@@ -36,10 +36,16 @@ window.addEventListener('click', function () {
 });
 </script>
 <script>
-  // Register the service worker
-  if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('service-worker.js');
-}
+if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service-worker.js', { scope: '/' })
+          .then(function(registration) {
+                console.log('Service Worker Registered');
+          });
+
+        navigator.serviceWorker.ready.then(function(registration) {
+           console.log('Service Worker Ready');
+        });
+      }
   </script>
 </body>
 </html>
