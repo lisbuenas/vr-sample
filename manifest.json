@@ -36,7 +36,7 @@
         } 
         ],
     "start_url": "/?homescreen=1",
-    "scope": "/",
+    "scope": "/vr-sample/",
     "display": "standalone",
     "background_color": "#2196F3",
     "theme_color": "#2196F3"
